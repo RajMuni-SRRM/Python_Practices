@@ -30,16 +30,30 @@
 # print(f.closed)
 
 
-import os,sys
-fname=input('Enter the file name:')
-if os.path.isfile(fname):
-	print('File exists:',fname)
-	f=open(fname,'r')
-else:
-	print('File not exists:',fname)
-	sys.exist(0)
-print('the content of the file is:')
-data=f.read()
-print(data)
-f.close()
-print(f.closed)
+# import os,sys
+# fname=input('Enter the file name:')
+# if os.path.isfile(fname):
+	# print('File exists:',fname)
+	# f=open(fname,'r')
+# else:
+	# print('File not exists:',fname)
+	# sys.exist(0)
+# print('the content of the file is:')
+# data=f.read()
+# print(data)
+# f.close()
+# print(f.closed)
+import csv
+with open('emp.csv','w',newline='') as f:
+	w=csv.writer(f)
+	w.writerow(['ENOM','ENAME','ESAL','EADDR'])
+	n=int(input("Enter the number of employees:"))
+	for i in range(n):
+		eno=int(input("Enter employee number:"))
+		ename=input('Enter emloyee name:'))
+		esal=float(input("Enter employee salary:"))
+		eaddr=input('Enter employee Address')
+		w.writerow(['eno','ename','esal','eaddr'])
+print('Is this file closed:',f.closed)
+print('Total employees data written to csv file successfully')
+
